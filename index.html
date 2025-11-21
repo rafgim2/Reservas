@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reservas</title>
+  <title>Reservas - CEIP Nuestra Señora del Carmen</title>
   <style>
     :root {
       --color-header: #f57c00;
@@ -12,8 +12,6 @@
       --color-card-border: #e0e0e0;
       --color-primary: #f57c00;
       --color-primary-dark: #e65100;
-      --color-text-main: #212121;
-      --color-text-muted: #616161;
       --shadow-soft: 0 4px 10px rgba(0, 0, 0, 0.08);
       --radius-lg: 16px;
     }
@@ -26,7 +24,7 @@
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: radial-gradient(circle at top, #ffe0b2 0, #f5f5f5 50%, #eeeeee 100%);
-      color: var(--color-text-main);
+      color: #212121;
     }
 
     .top-bar {
@@ -38,185 +36,106 @@
     header {
       background: var(--color-header);
       color: #fff;
-      padding: 16px 24px 14px;
+      padding: 20px 24px 18px;
       text-align: center;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
     }
 
     header h1 {
       margin: 0;
-      font-size: 24px;
-      letter-spacing: 1px;
+      font-size: 22px;
       text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
     }
 
-    header p {
-      margin: 6px 0 0;
-      font-size: 14px;
-      opacity: 0.9;
+    header h2 {
+      margin: 4px 0 0;
+      font-size: 16px;
+      opacity: 0.95;
+      font-weight: 500;
+      letter-spacing: 0.5px;
     }
 
     main {
       max-width: 960px;
-      margin: 24px auto 32px;
-      padding: 0 16px 16px;
-    }
-
-    .intro {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: var(--radius-lg);
-      padding: 16px 18px;
-      box-shadow: var(--shadow-soft);
-      margin-bottom: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.7);
-    }
-
-    .intro h2 {
-      margin: 0 0 6px;
-      font-size: 18px;
-    }
-
-    .intro p {
-      margin: 0;
-      font-size: 14px;
-      color: var(--color-text-muted);
+      margin: 28px auto 32px;
+      padding: 0 16px;
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
+      gap: 20px;
     }
 
     .card {
       background: var(--color-card-bg);
       border-radius: var(--radius-lg);
-      padding: 16px 16px 14px;
+      padding: 22px 16px 18px;
       box-shadow: var(--shadow-soft);
       border: 1px solid var(--color-card-border);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
       transition:
         transform 0.15s ease,
         box-shadow 0.15s ease,
-        border-color 0.15s ease,
-        background 0.15s ease;
+        border-color 0.15s ease;
+      text-align: center;
       position: relative;
       overflow: hidden;
     }
 
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top right, rgba(245, 124, 0, 0.08), transparent 60%);
-      pointer-events: none;
-    }
-
     .card:hover {
-      transform: translateY(-3px);
+      transform: translateY(-4px);
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
       border-color: rgba(245, 124, 0, 0.4);
       background: #ffffff;
     }
 
-    .card-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 8px;
-    }
-
     .card-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      background: rgba(245, 124, 0, 0.1);
+      font-size: 42px;
+      margin-bottom: 12px;
     }
 
     .card-title {
       font-size: 17px;
       font-weight: 600;
-    }
-
-    .card-subtitle {
-      font-size: 12px;
-      color: var(--color-text-muted);
-      margin-bottom: 10px;
-    }
-
-    .card ul {
-      margin: 0 0 12px 18px;
-      padding: 0;
-      font-size: 13px;
-      color: var(--color-text-muted);
-    }
-
-    .card ul li {
-      margin-bottom: 4px;
-    }
-
-    .card-footer {
-      margin-top: auto;
-      display: flex;
-      justify-content: flex-end;
+      margin-bottom: 18px;
     }
 
     .btn-link {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 6px 12px;
+      padding: 8px 16px;
       border-radius: 999px;
       border: none;
       background: var(--color-primary);
       color: #fff;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 600;
       text-decoration: none;
       cursor: pointer;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
       transition:
         background 0.15s ease,
-        transform 0.1s ease,
-        box-shadow 0.1s ease;
-      white-space: nowrap;
-    }
-
-    .btn-link span.icon {
-      font-size: 14px;
-      transform: translateY(1px);
+        transform 0.1s ease;
     }
 
     .btn-link:hover {
       background: var(--color-primary-dark);
       transform: translateY(-1px);
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
     }
 
     .btn-link:active {
       transform: translateY(0);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    }
-
-    .note {
-      margin-top: 16px;
-      font-size: 12px;
-      color: var(--color-text-muted);
-      text-align: center;
     }
 
     @media (max-width: 480px) {
       header h1 {
-        font-size: 20px;
+        font-size: 18px;
       }
-      .intro {
-        padding: 12px 14px;
+      header h2 {
+        font-size: 14px;
       }
     }
   </style>
@@ -224,137 +143,63 @@
 <body>
   <div class="top-bar">
     <header>
-      <h1>RESERVAS</h1>
-      <p>Elige el recurso que quieres reservar</p>
+      <h1>CEIP NUESTRA SEÑORA DEL CARMEN</h1>
+      <h2>RESERVAS</h2>
     </header>
   </div>
 
   <main>
-    <section class="intro">
-      <h2>¿Qué quieres reservar?</h2>
-      <p>
-        Pulsa en el apartado correspondiente para acceder al calendario de reservas.
-        Solo tienes que elegir el día y la sesión que necesitas.
-      </p>
-    </section>
-
     <section class="grid">
+
       <!-- PORTÁTILES -->
       <article class="card">
-        <div>
-          <div class="card-header">
-            <div class="card-icon">💻</div>
-            <div class="card-title">Carro de portátiles</div>
-          </div>
-          <div class="card-subtitle">
-            Reserva el carro de portátiles para tu grupo.
-          </div>
-          <ul>
-            <li>Calendario por meses lectivos</li>
-            <li>Una franja por sesión y día</li>
-            <li>Reservas fijas ya marcadas</li>
-          </ul>
-        </div>
-        <div class="card-footer">
-          <a
-            class="btn-link"
-            href="https://rafgim2.github.io/Reservaportatiles/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Abrir reservas <span class="icon">↗</span>
-          </a>
-        </div>
+        <div class="card-icon">💻</div>
+        <div class="card-title">Carro de portátiles</div>
+        <a
+          class="btn-link"
+          href="https://rafgim2.github.io/Reservaportatiles/"
+        >
+          Abrir reserva →
+        </a>
       </article>
 
       <!-- AULA INFORMÁTICA -->
       <article class="card">
-        <div>
-          <div class="card-header">
-            <div class="card-icon">🖥️</div>
-            <div class="card-title">Aula de informática</div>
-          </div>
-          <div class="card-subtitle">
-            Gestiona el uso del aula de ordenadores.
-          </div>
-          <ul>
-            <li>Turnos organizados por sesiones</li>
-            <li>Horas fijas de algunos grupos</li>
-            <li>Funcionamiento similar a portátiles</li>
-          </ul>
-        </div>
-        <div class="card-footer">
-          <a
-            class="btn-link"
-            href="https://rafgim2.github.io/ReservaAulaInformatica/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Abrir reservas <span class="icon">↗</span>
-          </a>
-        </div>
+        <div class="card-icon">🖥️</div>
+        <div class="card-title">Aula de informática</div>
+        <a
+          class="btn-link"
+          href="https://rafgim2.github.io/ReservaAulaInformatica/"
+        >
+          Abrir reserva →
+        </a>
       </article>
 
       <!-- BIBLIOTECA -->
       <article class="card">
-        <div>
-          <div class="card-header">
-            <div class="card-icon">📚</div>
-            <div class="card-title">Biblioteca</div>
-          </div>
-          <div class="card-subtitle">
-            Reservas para uso de la biblioteca y préstamos.
-          </div>
-          <ul>
-            <li>Franjas bloqueadas para préstamos</li>
-            <li>Sesiones fijas de algunos grupos</li>
-            <li>Resto de horas reservables</li>
-          </ul>
-        </div>
-        <div class="card-footer">
-          <a
-            class="btn-link"
-            href="https://rafgim2.github.io/ReservaBiblioteca/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Abrir reservas <span class="icon">↗</span>
-          </a>
-        </div>
+        <div class="card-icon">📚</div>
+        <div class="card-title">Biblioteca</div>
+        <a
+          class="btn-link"
+          href="https://rafgim2.github.io/ReservaBiblioteca/"
+        >
+          Abrir reserva →
+        </a>
       </article>
 
       <!-- AULA TRANSFORMADORA -->
       <article class="card">
-        <div>
-          <div class="card-header">
-            <div class="card-icon">✨</div>
-            <div class="card-title">Aula Transformadora</div>
-          </div>
-          <div class="card-subtitle">
-            Espacio flexible sin horario fijo ni límite de reservas.
-          </div>
-          <ul>
-            <li>Sin horarios preasignados</li>
-            <li>Reservas libres por sesiones</li>
-            <li>Ideal para proyectos y talleres</li>
-          </ul>
-        </div>
-        <div class="card-footer">
-          <a
-            class="btn-link"
-            href="https://rafgim2.github.io/ReservaAulaTransformadora/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Abrir reservas <span class="icon">↗</span>
-          </a>
-        </div>
+        <div class="card-icon">✨</div>
+        <div class="card-title">Aula Transformadora</div>
+        <a
+          class="btn-link"
+          href="https://rafgim2.github.io/ReservaAulaTransformadora/"
+        >
+          Abrir reserva →
+        </a>
       </article>
-    </section>
 
-    <p class="note">
-      Consejo: añade esta página a favoritos del navegador para acceder rápidamente a todas las reservas.
-    </p>
+    </section>
   </main>
 </body>
 </html>

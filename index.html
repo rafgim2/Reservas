@@ -34,31 +34,15 @@
     header {
       background: var(--color-header);
       color: #fff;
-      padding: 40px 16px;
+      padding: 24px 16px 28px;
       text-align: center;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
       position: relative;
       overflow: hidden;
     }
 
-    /* ⭐ Marca de agua del logo */
-    header::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: url("Logo-colegio2.jpg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 220px;
-      opacity: 0.17; /* Ajusta si quieres */
-      filter: grayscale(20%) brightness(120%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* ⭐ Línea blanca arriba */
+    /* LÍNEA BLANCA ARRIBA */
     .line-top {
-      content: "";
       position: absolute;
       top: 0;
       left: 0;
@@ -66,12 +50,11 @@
       height: 3px;
       background: #ffffff;
       opacity: 0.95;
-      z-index: 2;
+      z-index: 3;
     }
 
-    /* ⭐ Línea blanca abajo */
+    /* LÍNEA BLANCA ABAJO */
     .line-bottom {
-      content: "";
       position: absolute;
       bottom: 0;
       left: 0;
@@ -79,34 +62,32 @@
       height: 3px;
       background: #ffffff;
       opacity: 0.95;
-      z-index: 2;
-    }
-
-    /* Contenido encima de la marca de agua */
-    .header-content {
-      position: relative;
       z-index: 3;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 32px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 700;
+    /* FOTO ARRIBA */
+    .logo {
+      width: 130px;
+      height: auto;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      z-index: 2;
+      position: relative;
     }
 
     header h2 {
-      margin: 6px 0 0;
-      font-size: 20px;
-      opacity: 0.95;
-      font-weight: 500;
-      letter-spacing: 0.5px;
+      margin: 0;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 2;
     }
 
     @media (max-width: 480px) {
-      header h1 { font-size: 22px; }
-      header h2 { font-size: 16px; }
+      .logo { width: 100px; }
+      header h2 { font-size: 20px; }
     }
 
     main {
@@ -167,13 +148,13 @@
   <div class="top-bar">
     <header>
 
-      <!-- ⭐ Líneas blancas -->
       <div class="line-top"></div>
 
-      <div class="header-content">
-        <h1>CEIP NUESTRA SEÑORA DEL CARMEN</h1>
-        <h2>Reservas</h2>
-      </div>
+      <!-- FOTO NORMAL ARRIBA -->
+      <img src="Logo-colegio2.jpg" alt="Logo del colegio" class="logo">
+
+      <!-- RESERVAS DEBAJO -->
+      <h2>Reservas</h2>
 
       <div class="line-bottom"></div>
 

@@ -16,8 +16,6 @@
       --radius-lg: 16px;
     }
 
-    * { box-sizing: border-box; }
-
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -34,13 +32,13 @@
     header {
       background: var(--color-header);
       color: #fff;
-      padding: 32px 16px 40px;
+      padding: 24px 0 32px;
       text-align: center;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
       position: relative;
     }
 
-    /* LÍNEA BLANCA ARRIBA */
+    /* LÍNEA ARRIBA */
     .line-top {
       position: absolute;
       top: 0;
@@ -52,7 +50,7 @@
       z-index: 4;
     }
 
-    /* LÍNEA BLANCA ABAJO */
+    /* LÍNEA ABAJO */
     .line-bottom {
       position: absolute;
       bottom: 0;
@@ -64,16 +62,23 @@
       z-index: 4;
     }
 
-    /* 🌟 MARCO BLANCO REDONDEADO */
+    /* 🌟 MARCO A TODO EL ANCHO */
     .header-box {
+      width: 100%;
+      max-width: 100%;
+      padding: 26px 0 30px;
+      border-top: 3px solid #ffffff;
+      border-bottom: 3px solid #ffffff;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(4px);
+      border-radius: 0; /* ocupa todo el ancho, sin esquinas */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
       position: relative;
       z-index: 3;
-      display: inline-block;
-      padding: 20px 28px;
-      border: 3px solid #ffffff;
-      border-radius: 22px;
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(4px);
     }
 
     /* FOTO */
@@ -90,14 +95,22 @@
       font-size: 28px;
       font-weight: 700;
       letter-spacing: 0.5px;
-      text-transform: none; /* Solo R mayúscula */
+      text-transform: none; /* Solo R en mayuscula */
+      color: #fff;
     }
 
     @media (max-width: 480px) {
-      .logo { width: 180px; } /* PEDIDO: 180px en móvil */
-      header h2 { font-size: 22px; }
-      .header-box { padding: 18px 22px; }
-      header { padding: 36px 16px 44px; }
+      .logo {
+        width: 180px; /* tamaño pedido en móvil */
+      }
+
+      header h2 {
+        font-size: 22px;
+      }
+
+      .header-box {
+        padding: 24px 0 28px;
+      }
     }
 
     main {
@@ -118,7 +131,6 @@
       padding: 22px 16px 18px;
       box-shadow: var(--shadow-soft);
       border: 1px solid var(--color-card-border);
-      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
       text-align: center;
     }
 
@@ -143,13 +155,9 @@
       font-size: 14px;
       font-weight: 600;
       text-decoration: none;
-      cursor: pointer;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      transition: background 0.15s ease, transform 0.1s ease;
     }
 
-    .btn-link:hover { background: var(--color-primary-dark); transform: translateY(-1px); }
-    .btn-link:active { transform: translateY(0); }
+    .btn-link:hover { background: var(--color-primary-dark); }
 
   </style>
 </head>
@@ -160,7 +168,7 @@
 
       <div class="line-top"></div>
 
-      <!-- 🌟 MARCO QUE INCLUYE FOTO + RESERVAS -->
+      <!-- 🌟 CABECERA A TODO EL ANCHO -->
       <div class="header-box">
         <img src="Logo-colegio2.jpg" alt="Logo del colegio" class="logo">
         <h2>Reservas</h2>

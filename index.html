@@ -41,6 +41,17 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
     }
 
+    /* ✨ NUEVO MARCO PARA EL TÍTULO */
+    .header-box {
+      display: inline-block;
+      padding: 12px 22px;
+      margin-bottom: 10px;
+      border: 3px solid #ffffff;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(4px);
+    }
+
     .logo {
       width: 90px;
       height: auto;
@@ -146,8 +157,13 @@
 <body>
   <div class="top-bar">
     <header>
-      <h1>CEIP NUESTRA SEÑORA DEL CARMEN</h1>
-      <h2>Reservas</h2>
+
+      <!-- ✨ TÍTULO ENMARCADITO -->
+      <div class="header-box">
+        <h1>CEIP NUESTRA SEÑORA DEL CARMEN</h1>
+        <h2>Reservas</h2>
+      </div>
+
       <img src="Logo-colegio2.jpg" alt="Logo del colegio" class="logo">
     </header>
   </div>

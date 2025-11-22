@@ -78,12 +78,16 @@
       font-weight: 500;
     }
 
-    .logo {
+    /* Enlace del logo alineado a la derecha */
+    .logo-link {
       grid-column: 3;
+      justify-self: end;
+    }
+
+    .logo {
       width: 80px;
       height: auto;
       border-radius: 8px;
-      justify-self: end;
     }
 
     main {
@@ -154,8 +158,8 @@
         <div></div>
         <h2>Reservas</h2>
 
-        <!-- 🟠 LOGO AHORA ES UN ENLACE -->
-        <a href="https://portal.edu.gva.es/ceipnuestrasenoradelcarmen/">
+        <!-- Logo clicable alineado a la derecha -->
+        <a href="https://portal.edu.gva.es/ceipnuestrasenoradelcarmen/" class="logo-link">
           <img src="Logo-colegio2.jpg" alt="Logo del colegio" class="logo">
         </a>
       </div>

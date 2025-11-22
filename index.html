@@ -42,7 +42,7 @@
       position: relative;
     }
 
-    /* Líneas blancas */
+    /* Líneas blancas arriba y abajo */
     header::before,
     header::after {
       content: "";
@@ -67,6 +67,8 @@
       justify-content: center;
       align-items: center;
       gap: 20px;
+      /* Para evitar que salten de línea si pueden encajar */
+      flex-wrap: nowrap;
     }
 
     /* Títulos */
@@ -90,11 +92,12 @@
       letter-spacing: 0.5px;
     }
 
-    /* Logo al lado, alineado a la derecha */
+    /* Logo a la derecha del título */
     .logo {
       width: 90px;
       height: auto;
       border-radius: 8px;
+      flex-shrink: 0; /* para que no se deforme */
     }
 
     main {
@@ -167,15 +170,19 @@
 
     @media (max-width: 480px) {
       .header-content {
-        flex-direction: column;
+        gap: 10px;
+      }
+
+      .logo {
+        width: 70px;
       }
 
       header h1 {
-        font-size: 22px;
+        font-size: 20px;
       }
 
       header h2 {
-        font-size: 16px;
+        font-size: 14px;
       }
     }
   </style>

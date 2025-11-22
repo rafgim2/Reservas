@@ -41,9 +41,17 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
     }
 
+    /* --- LOGO --- */
+    .logo {
+      width: 90px;
+      height: auto;
+      margin-bottom: 10px;
+      border-radius: 8px; /* opcional */
+    }
+
     header h1 {
       margin: 0;
-      font-size: 26px;
+      font-size: 32px;  /* aumenté un poco el tamaño */
       text-transform: uppercase;
       letter-spacing: 1px;
       font-weight: 700;
@@ -51,7 +59,7 @@
 
     header h2 {
       margin: 4px 0 0;
-      font-size: 16px;
+      font-size: 18px;
       opacity: 0.95;
       font-weight: 500;
       letter-spacing: 0.5px;
@@ -75,10 +83,7 @@
       padding: 22px 16px 18px;
       box-shadow: var(--shadow-soft);
       border: 1px solid var(--color-card-border);
-      transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease,
-        border-color 0.15s ease;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -116,9 +121,7 @@
       text-decoration: none;
       cursor: pointer;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      transition:
-        background 0.15s ease,
-        transform 0.1s ease;
+      transition: background 0.15s ease, transform 0.1s ease;
     }
 
     .btn-link:hover {
@@ -132,17 +135,19 @@
 
     @media (max-width: 480px) {
       header h1 {
-        font-size: 24px;
+        font-size: 22px;
       }
       header h2 {
-        font-size: 14px;
+        font-size: 16px;
       }
     }
   </style>
 </head>
+
 <body>
   <div class="top-bar">
     <header>
+      <img src="Logo-colegio2.jpg" alt="Logo del colegio" class="logo">
       <h1>CEIP NUESTRA SEÑORA DEL CARMEN</h1>
       <h2>Reservas</h2>
     </header>
@@ -155,54 +160,31 @@
       <article class="card">
         <div class="card-icon">💻</div>
         <div class="card-title">Carro de portátiles</div>
-        <a
-          class="btn-link"
-          href="https://rafgim2.github.io/Reservaportatiles/"
-        >
-          Abrir reserva →
-        </a>
+        <a class="btn-link" href="https://rafgim2.github.io/Reservaportatiles/">Abrir reserva →</a>
       </article>
 
       <!-- AULA INFORMÁTICA -->
       <article class="card">
         <div class="card-icon">🖥️</div>
         <div class="card-title">Aula de informática</div>
-        <a
-          class="btn-link"
-          href="https://rafgim2.github.io/ReservaAulaInformatica/"
-        >
-          Abrir reserva →
-        </a>
+        <a class="btn-link" href="https://rafgim2.github.io/ReservaAulaInformatica/">Abrir reserva →</a>
       </article>
 
       <!-- BIBLIOTECA -->
       <article class="card">
         <div class="card-icon">📚</div>
         <div class="card-title">Biblioteca</div>
-        <a
-          class="btn-link"
-          href="https://rafgim2.github.io/ReservaBiblioteca/"
-        >
-          Abrir reserva →
-        </a>
+        <a class="btn-link" href="https://rafgim2.github.io/ReservaBiblioteca/">Abrir reserva →</a>
       </article>
 
       <!-- AULA TRANSFORMADORA -->
       <article class="card">
         <div class="card-icon">✨</div>
         <div class="card-title">Aula Transformadora</div>
-        <a
-          class="btn-link"
-          href="https://rafgim2.github.io/ReservaAulaTransformadora/"
-        >
-          Abrir reserva →
-        </a>
+        <a class="btn-link" href="https://rafgim2.github.io/ReservaAulaTransformadora/">Abrir reserva →</a>
       </article>
 
     </section>
   </main>
 </body>
 </html>
-
-
-

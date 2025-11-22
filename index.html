@@ -36,30 +36,16 @@
     header {
       background: var(--color-header);
       color: #fff;
-      padding: 20px 24px 26px;
+      padding: 20px 24px 18px;
       text-align: center;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-    }
-
-    /* ✨ MARCO COMPLETO (TÍTULO + SUBTÍTULO + IMAGEN) */
-    .header-box {
-      display: inline-block;
-      padding: 16px 26px;
-      margin-bottom: 10px;
-      border: 3px solid #ffffff;
-      border-radius: 22px;
-      background: rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(4px);
     }
 
     .logo {
       width: 90px;
       height: auto;
-      margin-top: 12px;
+      margin-top: 10px;
       border-radius: 8px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     header h1 {
@@ -148,7 +134,7 @@
 
     @media (max-width: 480px) {
       header h1 {
-        font-size: 24px;
+        font-size: 22px;
       }
       header h2 {
         font-size: 16px;
@@ -160,14 +146,9 @@
 <body>
   <div class="top-bar">
     <header>
-
-      <!-- ✨ AHORA EL MARCO INCLUYE LA IMAGEN -->
-      <div class="header-box">
-        <h1>CEIP NUESTRA SEÑORA DEL CARMEN</h1>
-        <h2>Reservas</h2>
-        <img src="Logo-colegio2.jpg" alt="Logo del colegio" class="logo">
-      </div>
-
+      <h1>CEIP NUESTRA SEÑORA DEL CARMEN</h1>
+      <h2>Reservas</h2>
+      <img src="Logo-colegio2.jpg" alt="Logo del colegio" class="logo">
     </header>
   </div>
 
@@ -206,5 +187,3 @@
   </main>
 </body>
 </html>
-
-

@@ -34,27 +34,57 @@
     header {
       background: var(--color-header);
       color: #fff;
-      padding: 24px 16px 24px;
+      padding: 40px 16px;
       text-align: center;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
       position: relative;
+      overflow: hidden; /* para que la marca de agua no sobresalga */
     }
 
-    /* Líneas blancas arriba y abajo */
-    header::before,
+    /* Marca de agua */
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("Logo-colegio2.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 220px;
+      opacity: 0.18;        /* Ajusta transparencia si quieres */
+      filter: grayscale(20%) brightness(120%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Líneas blancas */
     header::after {
       content: "";
-      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
       width: 100%;
       height: 3px;
       background: #ffffff;
       opacity: 0.9;
     }
 
-    header::before { margin-bottom: 14px; }
-    header::after { margin-top: 14px; }
+    header .line-top {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #ffffff;
+      opacity: 0.9;
+    }
 
-    /* TÍTULO PRINCIPAL CENTRADO */
+    /* CONTENIDO ENCIMA DE LA MARCA DE AGUA */
+    .header-content {
+      position: relative;
+      z-index: 2;
+    }
+
     header h1 {
       margin: 0;
       font-size: 32px;
@@ -63,32 +93,17 @@
       font-weight: 700;
     }
 
-    /* FILA con 3 columnas invisibles */
-    .subheader-row {
-      margin-top: 0px;
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      width: 100%;
-    }
-
-    /* CENTRO: RESERVAS */
-    .subheader-row h2 {
-      grid-column: 2;
-      text-align: center;
-      margin: 0;
+    header h2 {
+      margin: 6px 0 0;
       font-size: 20px;
       opacity: 0.95;
       font-weight: 500;
+      letter-spacing: 0.5px;
     }
 
-    /* DERECHA: LOGO */
-    .logo {
-      grid-column: 3;
-      width: 80px;
-      height: auto;
-      border-radius: 8px;
-      justify-self: end;
+    @media (max-width: 480px) {
+      header h1 { font-size: 22px; }
+      header h2 { font-size: 16px; }
     }
 
     main {
@@ -142,23 +157,18 @@
     .btn-link:hover { background: var(--color-primary-dark); transform: translateY(-1px); }
     .btn-link:active { transform: translateY(0); }
 
-    @media (max-width: 480px) {
-      header h1 { font-size: 22px; }
-      .subheader-row h2 { font-size: 16px; }
-      .logo { width: 60px; }
-    }
   </style>
 </head>
 
 <body>
   <div class="top-bar">
     <header>
-      <h1>CEIP NUESTRA SEÑORA DEL CARMEN</h1>
+      <div class="line-top"></div>
 
-      <div class="subheader-row">
-        <div></div> <!-- columna izquierda vacía -->
+      <div class="header-content">
+        <h1>CEIP NUESTRA SEÑORA DEL CARMEN</h1>
         <h2>Reservas</h2>
-              </div>
+      </div>
     </header>
   </div>
 
@@ -193,9 +203,3 @@
   </main>
 </body>
 </html>
-
-
-
-
-
-
